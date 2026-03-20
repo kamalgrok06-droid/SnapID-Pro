@@ -1,0 +1,4 @@
+ttkbootstrap
+pillow
+opencv-python
+tkinterdnd2
