@@ -1,1 +1,13 @@
 
+---
+
+# 📄 STEP 7: LICENSE (Simple MIT)
+
+Create file `LICENSE`:
+
+```txt
+MIT License
+
+Copyright (c) 2026 Kamal Raj Pahari
+
+Permission is hereby granted...
