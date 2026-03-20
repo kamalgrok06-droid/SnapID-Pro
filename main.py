@@ -25,7 +25,7 @@ def show_splash(root):
     splash.after(2000, splash.destroy)
 
 
-# ================= MAIN APP ================= #
+# ================= MAIN ================= #
 class SnapIDPro:
 
     def __init__(self, root):
@@ -33,8 +33,9 @@ class SnapIDPro:
         self.root.title("SnapID Pro")
         self.root.geometry("1100x720")
 
+        # APP ICON
         try:
-            self.root.iconbitmap("assets/snapid_pro_icon.ico")
+            self.root.iconbitmap("assets/snapid.ico")
         except:
             pass
 
@@ -52,6 +53,7 @@ class SnapIDPro:
         header = tb.Frame(self.root)
         header.pack(fill=X, pady=10)
 
+        # LOGO
         try:
             logo = Image.open("assets/logo.png").resize((160, 50))
             self.logo = ImageTk.PhotoImage(logo)
@@ -59,11 +61,11 @@ class SnapIDPro:
         except:
             tb.Label(header, text="SnapID Pro", font=("Segoe UI", 20, "bold")).pack(side=LEFT)
 
-        # Dark Mode Toggle
+        # DARK MODE
         tb.Button(header, text="🌙 Toggle Mode",
                   command=self.toggle_theme).pack(side=RIGHT, padx=10)
 
-        # Drag & Drop
+        # DRAG & DROP
         drop_label = tb.Label(self.root, text="Drag & Drop Images Here", bootstyle="info")
         drop_label.pack(pady=5, fill=X)
 
@@ -134,7 +136,7 @@ class SnapIDPro:
         self.image_files.extend(files)
         messagebox.showinfo("Loaded", f"{len(files)} images added")
 
-    # ================= FILE SELECT ================= #
+    # ================= FILE ================= #
     def select_input_folder(self):
         folder = filedialog.askdirectory()
         if folder:
@@ -151,7 +153,7 @@ class SnapIDPro:
             self.output_folder = folder
             self.output_var.set(folder)
 
-    # ================= FACE CROP ================= #
+    # ================= FACE ================= #
     def detect_and_crop_face(self, path):
         img_cv = cv2.imread(path)
         gray = cv2.cvtColor(img_cv, cv2.COLOR_BGR2GRAY)
